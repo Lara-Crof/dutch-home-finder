@@ -34,38 +34,20 @@
 
 ## 1. Clone the repository
 
-```
-bash
-git clone https://github.com/yourusername/dutch-home-finder.git
-
-cd dutch-home-finder
-```
-
----
-
 ## 2. Create virtual environment
 
 ### Linux / macOS
 
-```bash
+```
 python -m venv venv
 
 source venv/bin/activate
 ```
-
-### Windows
-
-```powershell
-python -m venv venv
-
-venv\Scripts\activate
-```
-
 ---
 
 ## 3. Install dependencies
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -74,16 +56,6 @@ pip install -r requirements.txt
 # ⚙️ Configuration
 
 Create a `.env` file in the project root:
-
-```env
-DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/dutch_home_finder
-
-FUNDA_API_KEY=your_api_key
-
-TELEGRAM_BOT_TOKEN=your_bot_token
-TELEGRAM_CHAT_ID=your_chat_id
-```
-
 ---
 
 # 🗄 Database Setup
@@ -98,7 +70,7 @@ alembic upgrade head
 
 # ▶️ Running the Service
 
-```bash
+```
 python main.py
 ```
 
@@ -110,24 +82,6 @@ The service will:
 4. Filter invalid/sold/old listings
 5. Save new listings into PostgreSQL
 6. Send Telegram notifications
-
----
-
-# 📬 Example Telegram Notification
-
-```text
-🏡 New Listing in Amsterdam
-
-💶 €425,000
-
-📍 Jordaan, Amsterdam
-
-🛏 2 bedrooms
-
-📐 78 m²
-
-🔗 View on Funda
-```
 
 ---
 
