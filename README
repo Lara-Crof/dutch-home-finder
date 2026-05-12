@@ -1,84 +1,161 @@
-Dutch Home Finder 🇳🇱🏡
+# Dutch Home Finder 🇳🇱🏡
 
-A lightweight service that monitors new property listings on Funda, stores them in a database, and sends instant Telegram notifications.
+> A lightweight service that monitors new property listings on Funda, stores them in a database, and sends instant Telegram notifications.
 
-✨ Features
-🔎 Scrapes the latest listings from Funda
-🆕 Detects only new listings
-🚫 Filters out sold, outdated, or irrelevant properties
-💬 Sends beautifully formatted Telegram notifications
-🗄 Stores listings in PostgreSQL for future analysis
-⚡ Async-first architecture
-🧩 Easy to extend with APIs, analytics, or dashboards
-🛠 Tech Stack
-Technology	Purpose
-Python 3.13	Main runtime
-SQLAlchemy	ORM
-Alembic	Database migrations
-PostgreSQL	Persistent storage
-Pydantic	Validation & settings
-aiogram	Telegram notifications
-FastAPI (optional)	HTTP API
-asyncpg	Async PostgreSQL driver🚀 Getting Started
-1. Clone the repository
+---
+
+## ✨ Features
+
+- 🔎 Scrapes the latest listings from Funda
+- 🆕 Detects only new listings
+- 🚫 Filters out sold, outdated, or irrelevant properties
+- 💬 Sends beautifully formatted Telegram notifications
+- 🗄 Stores listings in PostgreSQL for future analysis
+- ⚡ Async-first architecture
+- 🧩 Easy to extend with APIs, analytics, or dashboards
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Python 3.13 | Main runtime |
+| SQLAlchemy | ORM |
+| Alembic | Database migrations |
+| PostgreSQL | Persistent storage |
+| Pydantic | Validation & settings |
+| aiogram | Telegram notifications |
+| FastAPI *(optional)* | HTTP API |
+| asyncpg | Async PostgreSQL driver |
+
+---
+# 🚀 Getting Started
+
+## 1. Clone the repository
+
+```bash
 git clone https://github.com/yourusername/dutch-home-finder.git
+
 cd dutch-home-finder
-2. Create virtual environment
-Linux / macOS
+```
+
+---
+
+## 2. Create virtual environment
+
+### Linux / macOS
+
+```bash
 python -m venv venv
+
 source venv/bin/activate
-Windows
+```
+
+### Windows
+
+```powershell
 python -m venv venv
+
 venv\Scripts\activate
-3. Install dependencies
+```
+
+---
+
+## 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
-⚙️ Configuration
+```
 
-Create a .env file in the project root:
+---
 
+# ⚙️ Configuration
+
+Create a `.env` file in the project root:
+
+```env
 DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/dutch_home_finder
 
 FUNDA_API_KEY=your_api_key
 
 TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
-🗄 Database Setup
+```
+
+---
+
+# 🗄 Database Setup
 
 Run migrations:
 
+```bash
 alembic upgrade head
-▶️ Running the Service
+```
+
+---
+
+# ▶️ Running the Service
+
+```bash
 python main.py
+```
 
 The service will:
 
-Fetch fresh listings from Funda
-Detect unseen properties
-Load full listing details
-Filter invalid/sold/old listings
-Save new listings into PostgreSQL
-Send Telegram notifications
-📬 Example Telegram Notification
+1. Fetch fresh listings from Funda
+2. Detect unseen properties
+3. Load full listing details
+4. Filter invalid/sold/old listings
+5. Save new listings into PostgreSQL
+6. Send Telegram notifications
+
+---
+
+# 📬 Example Telegram Notification
+
+```text
 🏡 New Listing in Amsterdam
 
 💶 €425,000
+
 📍 Jordaan, Amsterdam
+
 🛏 2 bedrooms
+
 📐 78 m²
 
 🔗 View on Funda
-⏱ Scheduling
+```
+
+---
+
+# ⏱ Scheduling
 
 You can run the scraper periodically using:
 
-cron
-systemd timers
-Docker scheduled jobs
-GitHub Actions
-Kubernetes CronJob
+- cron
+- systemd timers
+- Docker scheduled jobs
+- GitHub Actions
+- Kubernetes CronJob
 
-Example cron:
+### Example cron job
 
+```bash
 */10 * * * * cd /path/to/project && /path/to/venv/bin/python main.py
+```
 
 Runs every 10 minutes.
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+See the `LICENSE` file for more information.
+
+---
+
+# ⭐ Support
+
+If you like this project, consider giving it a star ⭐ on GitHub.
