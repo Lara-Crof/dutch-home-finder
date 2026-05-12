@@ -1,0 +1,9 @@
+.
+├── LICENSE
+├── config
+│   └── settings_db.py
+├── core
+├── structure.txt
+└── telegram_bot
+
+4 directories, 3 files
